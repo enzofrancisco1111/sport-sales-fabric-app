@@ -38,6 +38,36 @@ dashboard/   l'application React (Rayfin)
 docs/        captures d'écran
 ```
 
+## Sécurité
+
+Une data app Fabric interroge le modèle sémantique avec l'API REST **executeQueries**, au nom de l'utilisateur connecté. Cette API exige la permission **Build** sur le modèle : le rôle *Viewer* ne suffit pas.
+
+**Le risque.** Build ne se limite pas à l'app : l'utilisateur peut aussi interroger **tout le modèle** depuis Excel (« Analyser dans Excel »), un rapport Power BI de sa création ou une requête DAX. Une table ou une colonne qu'aucun rapport n'affichait devient lisible. Le droit reste limité à ce modèle : il ne donne accès ni au lakehouse, ni aux autres modèles, ni aux autres workspaces.
+
+**Le choix fait ici.** L'app n'est pas branchée sur un modèle de production, mais sur un **modèle dédié** :
+
+```mermaid
+flowchart LR
+    LH[("Lakehouse<br/>tables Delta")]
+    PROD["Modèle de production<br/>toutes les tables"]
+    APPM["Modèle de l'app<br/>Sport Sales Model<br/>tables et mesures utiles"]
+    APP["Fabric App"]
+    U1(["Utilisateurs des rapports"])
+    U2(["Utilisateurs de l'app"])
+
+    LH -- Direct Lake --> PROD
+    LH -- Direct Lake --> APPM
+    PROD -- Viewer --> U1
+    APPM -- executeQueries --> APP
+    APP --> U2
+    APPM -. Build .-> U2
+```
+
+- **Aucune copie de données** : les deux modèles lisent les mêmes tables Delta en Direct Lake (un raccourci OneLake suffit si le lakehouse est dans un autre workspace).
+- **Exposition minimale** : le modèle de l'app ne contient que les tables et mesures dont l'app a besoin. Build est accordé sur lui seul ; le modèle de production reste en *Viewer*.
+- **Restreindre ce que chacun voit** : la sécurité au niveau des lignes (**RLS**) et des objets (**OLS**) s'applique aussi aux requêtes libres, puisque l'app interroge le modèle avec l'identité de l'utilisateur. À noter : un service principal ne prend pas en charge la RLS.
+- **Aucun secret dans le dépôt** : les identifiants de workspace et de modèle sont fournis localement (`fabric.example.yaml`, variables d'environnement), les fichiers `.env` sont exclus de Git.
+
 ## Validation
 
 Les totaux du modèle ont été comparés à l'Excel source :
