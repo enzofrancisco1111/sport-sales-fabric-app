@@ -1,0 +1,12 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Date'[Month Num],
+    'Date'[Month],
+    /*FILTERS*/
+    "Total Sales", [Total Sales],
+    "Total Profit", [Total Profit],
+    "Units Sold", [Units Sold],
+    "Total Cost", [Total Cost],
+    "Avg Price", [Avg Price per Unit]
+)
+ORDER BY 'Date'[Month Num]

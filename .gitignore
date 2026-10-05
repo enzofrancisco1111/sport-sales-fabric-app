@@ -1,0 +1,27 @@
+# Dépendances et builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Secrets et état de déploiement local (jamais dans Git)
+.env
+.env.*
+*.local
+dashboard/rayfin/.env*
+dashboard/rayfin/.deployments.json
+dashboard/rayfin/.temp/
+
+# Fichiers générés
+dashboard/src/fabric.generated.ts
+model/model.bim
+model/definition.pbism
+
+# Outils de test du navigateur
+dashboard/.playwright/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Identifiants Fabric locaux (voir dashboard/fabric.example.yaml)
+dashboard/fabric.yaml

@@ -1,0 +1,823 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": "container",
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "state": "Alaska",
+            "abbr": "AK",
+            "row": 0,
+            "col": 0
+          },
+          {
+            "state": "Maine",
+            "abbr": "ME",
+            "row": 0,
+            "col": 11
+          },
+          {
+            "state": "Vermont",
+            "abbr": "VT",
+            "row": 1,
+            "col": 10
+          },
+          {
+            "state": "New Hampshire",
+            "abbr": "NH",
+            "row": 1,
+            "col": 11
+          },
+          {
+            "state": "Washington",
+            "abbr": "WA",
+            "row": 2,
+            "col": 1
+          },
+          {
+            "state": "Idaho",
+            "abbr": "ID",
+            "row": 2,
+            "col": 2
+          },
+          {
+            "state": "Montana",
+            "abbr": "MT",
+            "row": 2,
+            "col": 3
+          },
+          {
+            "state": "North Dakota",
+            "abbr": "ND",
+            "row": 2,
+            "col": 4
+          },
+          {
+            "state": "Minnesota",
+            "abbr": "MN",
+            "row": 2,
+            "col": 5
+          },
+          {
+            "state": "Illinois",
+            "abbr": "IL",
+            "row": 2,
+            "col": 6
+          },
+          {
+            "state": "Wisconsin",
+            "abbr": "WI",
+            "row": 2,
+            "col": 7
+          },
+          {
+            "state": "Michigan",
+            "abbr": "MI",
+            "row": 2,
+            "col": 8
+          },
+          {
+            "state": "New York",
+            "abbr": "NY",
+            "row": 2,
+            "col": 9
+          },
+          {
+            "state": "Rhode Island",
+            "abbr": "RI",
+            "row": 2,
+            "col": 10
+          },
+          {
+            "state": "Massachusetts",
+            "abbr": "MA",
+            "row": 2,
+            "col": 11
+          },
+          {
+            "state": "Oregon",
+            "abbr": "OR",
+            "row": 3,
+            "col": 1
+          },
+          {
+            "state": "Nevada",
+            "abbr": "NV",
+            "row": 3,
+            "col": 2
+          },
+          {
+            "state": "Wyoming",
+            "abbr": "WY",
+            "row": 3,
+            "col": 3
+          },
+          {
+            "state": "South Dakota",
+            "abbr": "SD",
+            "row": 3,
+            "col": 4
+          },
+          {
+            "state": "Iowa",
+            "abbr": "IA",
+            "row": 3,
+            "col": 5
+          },
+          {
+            "state": "Indiana",
+            "abbr": "IN",
+            "row": 3,
+            "col": 6
+          },
+          {
+            "state": "Ohio",
+            "abbr": "OH",
+            "row": 3,
+            "col": 7
+          },
+          {
+            "state": "Pennsylvania",
+            "abbr": "PA",
+            "row": 3,
+            "col": 8
+          },
+          {
+            "state": "New Jersey",
+            "abbr": "NJ",
+            "row": 3,
+            "col": 9
+          },
+          {
+            "state": "Connecticut",
+            "abbr": "CT",
+            "row": 3,
+            "col": 10
+          },
+          {
+            "state": "California",
+            "abbr": "CA",
+            "row": 4,
+            "col": 1
+          },
+          {
+            "state": "Utah",
+            "abbr": "UT",
+            "row": 4,
+            "col": 2
+          },
+          {
+            "state": "Colorado",
+            "abbr": "CO",
+            "row": 4,
+            "col": 3
+          },
+          {
+            "state": "Nebraska",
+            "abbr": "NE",
+            "row": 4,
+            "col": 4
+          },
+          {
+            "state": "Missouri",
+            "abbr": "MO",
+            "row": 4,
+            "col": 5
+          },
+          {
+            "state": "Kentucky",
+            "abbr": "KY",
+            "row": 4,
+            "col": 6
+          },
+          {
+            "state": "West Virginia",
+            "abbr": "WV",
+            "row": 4,
+            "col": 7
+          },
+          {
+            "state": "Virginia",
+            "abbr": "VA",
+            "row": 4,
+            "col": 8
+          },
+          {
+            "state": "Maryland",
+            "abbr": "MD",
+            "row": 4,
+            "col": 9
+          },
+          {
+            "state": "Delaware",
+            "abbr": "DE",
+            "row": 4,
+            "col": 10
+          },
+          {
+            "state": "Arizona",
+            "abbr": "AZ",
+            "row": 5,
+            "col": 2
+          },
+          {
+            "state": "New Mexico",
+            "abbr": "NM",
+            "row": 5,
+            "col": 3
+          },
+          {
+            "state": "Kansas",
+            "abbr": "KS",
+            "row": 5,
+            "col": 4
+          },
+          {
+            "state": "Arkansas",
+            "abbr": "AR",
+            "row": 5,
+            "col": 5
+          },
+          {
+            "state": "Tennessee",
+            "abbr": "TN",
+            "row": 5,
+            "col": 6
+          },
+          {
+            "state": "North Carolina",
+            "abbr": "NC",
+            "row": 5,
+            "col": 7
+          },
+          {
+            "state": "South Carolina",
+            "abbr": "SC",
+            "row": 5,
+            "col": 8
+          },
+          {
+            "state": "Oklahoma",
+            "abbr": "OK",
+            "row": 6,
+            "col": 4
+          },
+          {
+            "state": "Louisiana",
+            "abbr": "LA",
+            "row": 6,
+            "col": 5
+          },
+          {
+            "state": "Mississippi",
+            "abbr": "MS",
+            "row": 6,
+            "col": 6
+          },
+          {
+            "state": "Alabama",
+            "abbr": "AL",
+            "row": 6,
+            "col": 7
+          },
+          {
+            "state": "Georgia",
+            "abbr": "GA",
+            "row": 6,
+            "col": 8
+          },
+          {
+            "state": "Hawaii",
+            "abbr": "HI",
+            "row": 7,
+            "col": 0
+          },
+          {
+            "state": "Texas",
+            "abbr": "TX",
+            "row": 7,
+            "col": 4
+          },
+          {
+            "state": "Florida",
+            "abbr": "FL",
+            "row": 7,
+            "col": 9
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 3,
+        "opacity": 0.12
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "ordinal",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "paddingInner": 0.12
+          }
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "paddingInner": 0.12
+          }
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "lookup": "State",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "state": "Alaska",
+                  "abbr": "AK",
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "state": "Maine",
+                  "abbr": "ME",
+                  "row": 0,
+                  "col": 11
+                },
+                {
+                  "state": "Vermont",
+                  "abbr": "VT",
+                  "row": 1,
+                  "col": 10
+                },
+                {
+                  "state": "New Hampshire",
+                  "abbr": "NH",
+                  "row": 1,
+                  "col": 11
+                },
+                {
+                  "state": "Washington",
+                  "abbr": "WA",
+                  "row": 2,
+                  "col": 1
+                },
+                {
+                  "state": "Idaho",
+                  "abbr": "ID",
+                  "row": 2,
+                  "col": 2
+                },
+                {
+                  "state": "Montana",
+                  "abbr": "MT",
+                  "row": 2,
+                  "col": 3
+                },
+                {
+                  "state": "North Dakota",
+                  "abbr": "ND",
+                  "row": 2,
+                  "col": 4
+                },
+                {
+                  "state": "Minnesota",
+                  "abbr": "MN",
+                  "row": 2,
+                  "col": 5
+                },
+                {
+                  "state": "Illinois",
+                  "abbr": "IL",
+                  "row": 2,
+                  "col": 6
+                },
+                {
+                  "state": "Wisconsin",
+                  "abbr": "WI",
+                  "row": 2,
+                  "col": 7
+                },
+                {
+                  "state": "Michigan",
+                  "abbr": "MI",
+                  "row": 2,
+                  "col": 8
+                },
+                {
+                  "state": "New York",
+                  "abbr": "NY",
+                  "row": 2,
+                  "col": 9
+                },
+                {
+                  "state": "Rhode Island",
+                  "abbr": "RI",
+                  "row": 2,
+                  "col": 10
+                },
+                {
+                  "state": "Massachusetts",
+                  "abbr": "MA",
+                  "row": 2,
+                  "col": 11
+                },
+                {
+                  "state": "Oregon",
+                  "abbr": "OR",
+                  "row": 3,
+                  "col": 1
+                },
+                {
+                  "state": "Nevada",
+                  "abbr": "NV",
+                  "row": 3,
+                  "col": 2
+                },
+                {
+                  "state": "Wyoming",
+                  "abbr": "WY",
+                  "row": 3,
+                  "col": 3
+                },
+                {
+                  "state": "South Dakota",
+                  "abbr": "SD",
+                  "row": 3,
+                  "col": 4
+                },
+                {
+                  "state": "Iowa",
+                  "abbr": "IA",
+                  "row": 3,
+                  "col": 5
+                },
+                {
+                  "state": "Indiana",
+                  "abbr": "IN",
+                  "row": 3,
+                  "col": 6
+                },
+                {
+                  "state": "Ohio",
+                  "abbr": "OH",
+                  "row": 3,
+                  "col": 7
+                },
+                {
+                  "state": "Pennsylvania",
+                  "abbr": "PA",
+                  "row": 3,
+                  "col": 8
+                },
+                {
+                  "state": "New Jersey",
+                  "abbr": "NJ",
+                  "row": 3,
+                  "col": 9
+                },
+                {
+                  "state": "Connecticut",
+                  "abbr": "CT",
+                  "row": 3,
+                  "col": 10
+                },
+                {
+                  "state": "California",
+                  "abbr": "CA",
+                  "row": 4,
+                  "col": 1
+                },
+                {
+                  "state": "Utah",
+                  "abbr": "UT",
+                  "row": 4,
+                  "col": 2
+                },
+                {
+                  "state": "Colorado",
+                  "abbr": "CO",
+                  "row": 4,
+                  "col": 3
+                },
+                {
+                  "state": "Nebraska",
+                  "abbr": "NE",
+                  "row": 4,
+                  "col": 4
+                },
+                {
+                  "state": "Missouri",
+                  "abbr": "MO",
+                  "row": 4,
+                  "col": 5
+                },
+                {
+                  "state": "Kentucky",
+                  "abbr": "KY",
+                  "row": 4,
+                  "col": 6
+                },
+                {
+                  "state": "West Virginia",
+                  "abbr": "WV",
+                  "row": 4,
+                  "col": 7
+                },
+                {
+                  "state": "Virginia",
+                  "abbr": "VA",
+                  "row": 4,
+                  "col": 8
+                },
+                {
+                  "state": "Maryland",
+                  "abbr": "MD",
+                  "row": 4,
+                  "col": 9
+                },
+                {
+                  "state": "Delaware",
+                  "abbr": "DE",
+                  "row": 4,
+                  "col": 10
+                },
+                {
+                  "state": "Arizona",
+                  "abbr": "AZ",
+                  "row": 5,
+                  "col": 2
+                },
+                {
+                  "state": "New Mexico",
+                  "abbr": "NM",
+                  "row": 5,
+                  "col": 3
+                },
+                {
+                  "state": "Kansas",
+                  "abbr": "KS",
+                  "row": 5,
+                  "col": 4
+                },
+                {
+                  "state": "Arkansas",
+                  "abbr": "AR",
+                  "row": 5,
+                  "col": 5
+                },
+                {
+                  "state": "Tennessee",
+                  "abbr": "TN",
+                  "row": 5,
+                  "col": 6
+                },
+                {
+                  "state": "North Carolina",
+                  "abbr": "NC",
+                  "row": 5,
+                  "col": 7
+                },
+                {
+                  "state": "South Carolina",
+                  "abbr": "SC",
+                  "row": 5,
+                  "col": 8
+                },
+                {
+                  "state": "Oklahoma",
+                  "abbr": "OK",
+                  "row": 6,
+                  "col": 4
+                },
+                {
+                  "state": "Louisiana",
+                  "abbr": "LA",
+                  "row": 6,
+                  "col": 5
+                },
+                {
+                  "state": "Mississippi",
+                  "abbr": "MS",
+                  "row": 6,
+                  "col": 6
+                },
+                {
+                  "state": "Alabama",
+                  "abbr": "AL",
+                  "row": 6,
+                  "col": 7
+                },
+                {
+                  "state": "Georgia",
+                  "abbr": "GA",
+                  "row": 6,
+                  "col": 8
+                },
+                {
+                  "state": "Hawaii",
+                  "abbr": "HI",
+                  "row": 7,
+                  "col": 0
+                },
+                {
+                  "state": "Texas",
+                  "abbr": "TX",
+                  "row": 7,
+                  "col": 4
+                },
+                {
+                  "state": "Florida",
+                  "abbr": "FL",
+                  "row": 7,
+                  "col": 9
+                }
+              ]
+            },
+            "key": "state",
+            "fields": [
+              "abbr",
+              "row",
+              "col"
+            ]
+          }
+        },
+        {
+          "joinaggregate": [
+            {
+              "op": "max",
+              "field": "Value",
+              "as": "MaxValue"
+            }
+          ]
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadius": 3
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "axis": null,
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "paddingInner": 0.12
+              }
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "axis": null,
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "paddingInner": 0.12
+              }
+            },
+            "color": {
+              "field": "Value",
+              "type": "quantitative",
+              "scale": {
+                "scheme": "blues"
+              },
+              "legend": {
+                "orient": "bottom",
+                "direction": "horizontal",
+                "title": null,
+                "gradientLength": {
+                  "expr": "width * 0.9"
+                },
+                "labelExpr": "datum.value >= 1e6 ? format(datum.value / 1e6, '.1f') + 'M' : datum.value >= 1e3 ? format(datum.value / 1e3, '.0f') + 'K' : format(datum.value, ',.0f')"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "State",
+                "type": "nominal"
+              },
+              {
+                "field": "Value",
+                "type": "quantitative"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "axis": null,
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "paddingInner": 0.12
+              }
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "axis": null,
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "paddingInner": 0.12
+              }
+            },
+            "text": {
+              "field": "abbr"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.Value > datum.MaxValue * 0.45",
+                "value": "#ffffff"
+              },
+              "value": "#0d1b33"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

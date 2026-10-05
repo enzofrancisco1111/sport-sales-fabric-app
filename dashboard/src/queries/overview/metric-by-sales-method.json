@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": "container",
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "Value",
+          "as": "Total"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.Value / datum.Total",
+      "as": "Share"
+    },
+    {
+      "calculate": "datum.SalesMethod + '   ' + format(datum.Share, '.1%')",
+      "as": "MethodShare"
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": {
+      "expr": "min(width, height) * 0.24"
+    },
+    "outerRadius": {
+      "expr": "min(width, height) * 0.46"
+    }
+  },
+  "encoding": {
+    "theta": {
+      "field": "Value",
+      "type": "quantitative",
+      "stack": true
+    },
+    "color": {
+      "field": "MethodShare",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "Value",
+        "order": "descending"
+      },
+      "legend": {
+        "orient": "right",
+        "symbolType": "square"
+      }
+    },
+    "order": {
+      "field": "Value",
+      "sort": "descending"
+    },
+    "tooltip": [
+      {
+        "field": "SalesMethod",
+        "type": "nominal"
+      },
+      {
+        "field": "Value",
+        "type": "quantitative"
+      },
+      {
+        "field": "Share",
+        "type": "quantitative",
+        "title": "Share",
+        "format": ".1%"
+      }
+    ]
+  }
+}

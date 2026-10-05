@@ -1,0 +1,6 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    Retailer[Retailer],
+    "Total Sales", [Total Sales]
+)
+ORDER BY Retailer[Retailer]

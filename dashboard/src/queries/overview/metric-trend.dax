@@ -1,0 +1,8 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Date'[Month Num],
+    'Date'[Month],
+    /*FILTERS*/
+    "Value", __METRIC__
+)
+ORDER BY 'Date'[Month Num]

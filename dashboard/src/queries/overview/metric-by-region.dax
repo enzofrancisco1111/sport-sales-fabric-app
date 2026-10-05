@@ -1,0 +1,7 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    Geography[Region],
+    /*FILTERS*/
+    "Value", __METRIC__
+)
+ORDER BY [Value] DESC

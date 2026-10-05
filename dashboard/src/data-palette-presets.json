@@ -1,0 +1,94 @@
+{
+  "palettes": [
+    {
+      "id": "ocean-teal",
+      "name": "Ocean Teal",
+      "colors": {
+        "light": [
+          "#0f766e",
+          "#134e4a",
+          "#2dd4bf",
+          "#0369a1",
+          "#65a30d",
+          "#99f6e4",
+          "#1e3a8a",
+          "#ca8a04",
+          "#475569",
+          "#be185d"
+        ],
+        "dark": [
+          "#2dd4bf",
+          "#99f6e4",
+          "#14b8a6",
+          "#38bdf8",
+          "#a3e635",
+          "#ccfbf1",
+          "#93c5fd",
+          "#facc15",
+          "#94a3b8",
+          "#f472b6"
+        ]
+      }
+    },
+    {
+      "id": "sunset-coral",
+      "name": "Sunset Coral",
+      "colors": {
+        "light": [
+          "#e8553e",
+          "#7c2d12",
+          "#f59e0b",
+          "#9d174d",
+          "#2563eb",
+          "#fdba74",
+          "#4d7c0f",
+          "#7c3aed",
+          "#57534e",
+          "#0e7490"
+        ],
+        "dark": [
+          "#ff7a63",
+          "#fed7aa",
+          "#fbbf24",
+          "#f472b6",
+          "#60a5fa",
+          "#ffedd5",
+          "#a3e635",
+          "#c4b5fd",
+          "#d6d3d1",
+          "#22d3ee"
+        ]
+      }
+    },
+    {
+      "id": "graphite-mono",
+      "name": "Graphite Mono",
+      "colors": {
+        "light": [
+          "#1e293b",
+          "#64748b",
+          "#0f172a",
+          "#94a3b8",
+          "#334155",
+          "#cbd5e1",
+          "#475569",
+          "#1d4ed8",
+          "#0f766e",
+          "#b45309"
+        ],
+        "dark": [
+          "#e2e8f0",
+          "#94a3b8",
+          "#f8fafc",
+          "#64748b",
+          "#cbd5e1",
+          "#475569",
+          "#a1a1aa",
+          "#93c5fd",
+          "#5eead4",
+          "#fcd34d"
+        ]
+      }
+    }
+  ]
+}

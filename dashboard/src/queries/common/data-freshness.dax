@@ -1,0 +1,2 @@
+EVALUATE
+ROW("Last Invoice Date", MAX(Sales[Invoice Date]))

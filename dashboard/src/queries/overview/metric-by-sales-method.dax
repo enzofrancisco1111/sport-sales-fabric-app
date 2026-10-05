@@ -1,0 +1,7 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Sales Method'[Sales Method],
+    /*FILTERS*/
+    "Value", __METRIC__
+)
+ORDER BY [Value] DESC

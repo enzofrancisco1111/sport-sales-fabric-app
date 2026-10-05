@@ -1,0 +1,55 @@
+city_id,city,state,region
+1,Albany,New York,Northeast
+2,Albuquerque,New Mexico,West
+3,Anchorage,Alaska,West
+4,Atlanta,Georgia,Southeast
+5,Baltimore,Maryland,Northeast
+6,Billings,Montana,Midwest
+7,Birmingham,Alabama,South
+8,Boise,Idaho,West
+9,Boston,Massachusetts,Northeast
+10,Burlington,Vermont,Northeast
+11,Charleston,South Carolina,Southeast
+12,Charleston,West Virginia,Northeast
+13,Charlotte,North Carolina,Southeast
+14,Cheyenne,Wyoming,West
+15,Chicago,Illinois,Midwest
+16,Columbus,Ohio,Midwest
+17,Dallas,Texas,South
+18,Denver,Colorado,West
+19,Des Moines,Iowa,Midwest
+20,Detroit,Michigan,Midwest
+21,Fargo,North Dakota,Midwest
+22,Hartford,Connecticut,Northeast
+23,Honolulu,Hawaii,West
+24,Houston,Texas,South
+25,Indianapolis,Indiana,Midwest
+26,Jackson,Mississippi,South
+27,Knoxville,Tennessee,South
+28,Las Vegas,Nevada,West
+29,Little Rock,Arkansas,South
+30,Los Angeles,California,West
+31,Louisville,Kentucky,Southeast
+32,Manchester,New Hampshire,Northeast
+33,Miami,Florida,Southeast
+34,Milwaukee,Wisconsin,Midwest
+35,Minneapolis,Minnesota,Midwest
+36,New Orleans,Louisiana,South
+37,New York,New York,Northeast
+38,Newark,New Jersey,Northeast
+39,Oklahoma City,Oklahoma,South
+40,Omaha,Nebraska,Midwest
+41,Orlando,Florida,Southeast
+42,Philadelphia,Pennsylvania,Northeast
+43,Phoenix,Arizona,West
+44,Portland,Maine,Northeast
+45,Portland,Oregon,West
+46,Providence,Rhode Island,Northeast
+47,Richmond,Virginia,Southeast
+48,Salt Lake City,Utah,West
+49,San Francisco,California,West
+50,Seattle,Washington,West
+51,Sioux Falls,South Dakota,Midwest
+52,St. Louis,Missouri,Midwest
+53,Wichita,Kansas,Midwest
+54,Wilmington,Delaware,Northeast

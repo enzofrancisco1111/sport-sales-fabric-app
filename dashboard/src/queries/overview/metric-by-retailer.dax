@@ -1,0 +1,7 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    Retailer[Retailer],
+    /*FILTERS*/
+    "Value", __METRIC__
+)
+ORDER BY [Value] DESC

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": "container",
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "Value",
+          "as": "MaxValue"
+        },
+        {
+          "op": "min",
+          "field": "Value",
+          "as": "MinValue"
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "line": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ],
+          "title": null,
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": null
+        },
+        "tooltip": [
+          {
+            "field": "Month",
+            "type": "nominal"
+          },
+          {
+            "field": "Value",
+            "type": "quantitative"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          4
+        ]
+      },
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Value === datum.MaxValue || datum.Value === datum.MinValue"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "size": 70,
+            "opacity": 1
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "labelVertical",
+            "dy": -10,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {
+              "field": "Value",
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.Value === datum.MaxValue",
+            "value": "#16a34a"
+          },
+          "value": "#dc2626"
+        }
+      }
+    }
+  ]
+}

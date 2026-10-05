@@ -1,0 +1,14 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    /*FILTERS*/
+    "Total Sales", [Total Sales],
+    "Sales MoM", [Sales MoM %],
+    "Total Profit", [Total Profit],
+    "Profit MoM", [Profit MoM %],
+    "Units Sold", [Units Sold],
+    "Units MoM", [Units MoM %],
+    "Total Cost", [Total Cost],
+    "Cost MoM", [Cost MoM %],
+    "Avg Price", [Avg Price per Unit],
+    "Avg Price MoM", [Avg Price MoM %]
+)

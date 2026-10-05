@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": "container",
+  "padding": 0,
+  "mark": {
+    "type": "area",
+    "line": true
+  },
+  "encoding": {
+    "x": {
+      "field": "MonthNum",
+      "type": "quantitative",
+      "axis": {
+        "title": null,
+        "labels": false,
+        "ticks": false,
+        "grid": false,
+        "domain": false
+      },
+      "scale": {
+        "nice": false
+      }
+    },
+    "y": {
+      "field": "TotalSales",
+      "type": "quantitative",
+      "axis": {
+        "title": null,
+        "labels": false,
+        "ticks": false,
+        "grid": false,
+        "domain": false
+      },
+      "scale": {
+        "zero": false,
+        "padding": 4
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Month",
+        "type": "nominal"
+      },
+      {
+        "field": "TotalSales",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# Copiez ce fichier en fabric.yaml et renseignez vos identifiants,
+# ou lancez : npx fabric-app-data add semanticModel sportSales -w <workspace-id> -i <semantic-model-id>
+activeProfile: default
+profiles:
+  default:
+    semanticModels:
+      sportSales:
+        workspaceId: <workspace-id>
+        itemId: <semantic-model-id>

@@ -1,0 +1,12 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    Retailer[Retailer],
+    Product[Product],
+    /*FILTERS*/
+    "Total Sales", [Total Sales],
+    "Total Profit", [Total Profit],
+    "Units Sold", [Units Sold],
+    "Operating Margin", [Operating Margin %],
+    "Sales YoY", [Sales YoY %]
+)
+ORDER BY [Total Sales] DESC

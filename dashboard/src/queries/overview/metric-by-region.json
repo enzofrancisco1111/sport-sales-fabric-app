@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": "container",
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "Value",
+          "as": "MaxValue"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.MaxValue * 1.3",
+      "as": "Headroom"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "Region",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null,
+      "axis": {
+        "labelLimit": 120
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "axis": null
+        },
+        "tooltip": [
+          {
+            "field": "Region",
+            "type": "nominal"
+          },
+          {
+            "field": "Value",
+            "type": "quantitative"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "style": "labelHorizontal"
+      },
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "axis": null
+        },
+        "text": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "tick",
+        "opacity": 0
+      },
+      "encoding": {
+        "x": {
+          "field": "Headroom",
+          "type": "quantitative",
+          "axis": null
+        }
+      }
+    }
+  ]
+}
