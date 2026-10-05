@@ -50,7 +50,7 @@ Une data app Fabric interroge le modèle sémantique avec l'API REST **executeQu
 flowchart LR
     LH[("Lakehouse<br/>tables Delta")]
     PROD["Modèle de production<br/>toutes les tables"]
-    APPM["Modèle de l'app<br/>Sport Sales Model<br/>tables et mesures utiles"]
+    APPM["Modèle de l'app<br/>Sport Sales Model<br/>tables et mesures utiles<br/>RLS par enseigne"]
     APP["Fabric App"]
     U1(["Utilisateurs des rapports"])
     U2(["Utilisateurs de l'app"])
@@ -65,7 +65,28 @@ flowchart LR
 
 - **Aucune copie de données** : les deux modèles lisent les mêmes tables Delta en Direct Lake (un raccourci OneLake suffit si le lakehouse est dans un autre workspace).
 - **Exposition minimale** : le modèle de l'app ne contient que les tables et mesures dont l'app a besoin. Build est accordé sur lui seul ; le modèle de production reste en *Viewer*.
-- **Restreindre ce que chacun voit** : la sécurité au niveau des lignes (**RLS**) et des objets (**OLS**) s'applique aussi aux requêtes libres, puisque l'app interroge le modèle avec l'identité de l'utilisateur. À noter : un service principal ne prend pas en charge la RLS.
+- **RLS dynamique par enseigne** : la table cachée `User Access` (`data/user_retailer_access.csv`) liste, pour chaque compte, les enseignes autorisées. Le rôle **Retailer Manager** filtre la table `Retailer`, et le filtre se propage aux ventes :
+
+  ```dax
+  -- Retailer
+  [Retailer ID] IN CALCULATETABLE(
+      VALUES('User Access'[Retailer ID]),
+      'User Access'[Email] = USERPRINCIPALNAME())
+  -- User Access : chacun ne voit que ses propres droits
+  [Email] = USERPRINCIPALNAME()
+  ```
+
+  Ajouter un utilisateur = ajouter une ligne dans la table, sans modifier le modèle. Un compte absent de la table ne voit aucune donnée. La RLS s'applique aussi aux requêtes libres (Excel, DAX), puisque l'app interroge le modèle avec l'identité de l'utilisateur. Elle ne s'applique pas aux administrateurs, membres et contributeurs du workspace, et un service principal ne la prend pas en charge.
+
+  | Compte de démonstration (fictif) | Enseignes visibles |
+  |---|---|
+  | `manager.amazon@…` | Amazon |
+  | `manager.footlocker@…` | Foot Locker |
+  | `manager.west@…` | West Gear, Sports Direct |
+  | `direction@…` | les 6 enseignes |
+  | compte absent de la table | aucune |
+
+  Logique vérifiée en DAX pour chaque compte. Pour l'activer réellement : ajouter les utilisateurs au rôle (modèle sémantique > *Sécurité*) avec un accès *Viewer* + *Build*, puis tester avec *Tester en tant que rôle*.
 - **Aucun secret dans le dépôt** : les identifiants de workspace et de modèle sont fournis localement (`fabric.example.yaml`, variables d'environnement), les fichiers `.env` sont exclus de Git.
 
 ## Validation

@@ -106,7 +106,34 @@ tables = [
         col("Month", "month", "string", sortByColumn="Month Num"),
         col("Year Month", "year_month", "dateTime", "yyyy-mm"),
     ], dataCategory="Time"),
+    # Table de droits pour la RLS : une ligne par (utilisateur, enseigne autorisée). Cachée.
+    table("User Access", "user_retailer_access", [
+        col("Email", "email", "string"),
+        col("Retailer ID", "retailer_id", "int64", summarizeBy="none"),
+    ], isHidden=True),
 ]
+
+# RLS dynamique : chaque utilisateur ne voit que les enseignes listées pour son compte.
+# Le filtre sur Retailer se propage à Sales par la relation. La table de droits est
+# elle-même filtrée, pour qu'un utilisateur ne voie pas les droits des autres.
+roles = [{
+    "name": "Retailer Manager",
+    "modelPermission": "read",
+    "tablePermissions": [
+        {
+            "name": "Retailer",
+            "filterExpression": (
+                "[Retailer ID] IN CALCULATETABLE("
+                "VALUES('User Access'[Retailer ID]), "
+                "'User Access'[Email] = USERPRINCIPALNAME())"
+            ),
+        },
+        {
+            "name": "User Access",
+            "filterExpression": "[Email] = USERPRINCIPALNAME()",
+        },
+    ],
+}]
 
 rel = lambda n, f, t, tc: {"name": n, "fromTable": "Sales", "fromColumn": f,
                            "toTable": t, "toColumn": tc}
@@ -125,6 +152,7 @@ bim = {
         "defaultPowerBIDataSourceVersion": "powerBI_V3",
         "tables": tables,
         "relationships": relationships,
+        "roles": roles,
         "expressions": [{
             "name": "DatabaseQuery",
             "kind": "m",
