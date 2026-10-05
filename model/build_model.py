@@ -116,14 +116,11 @@ tables = [
 # RLS dynamique : chaque utilisateur ne voit que les enseignes listées pour son compte.
 # Le filtre sur Retailer se propage à Sales par la relation. La table de droits est
 # elle-même filtrée, pour qu'un utilisateur ne voie pas les droits des autres.
-# Membres du rôle : UPN séparés par des virgules dans SPORT_SALES_RLS_MEMBERS
-# (gardés hors du dépôt, comme les autres identifiants du tenant).
-rls_members = [m.strip() for m in os.environ.get("SPORT_SALES_RLS_MEMBERS", "").split(",") if m.strip()]
-
+# Les membres du rôle ne font pas partie de la définition du modèle : Power BI les ignore
+# ici. On les ajoute dans le service (modèle sémantique > Sécurité > Retailer Manager).
 roles = [{
     "name": "Retailer Manager",
     "modelPermission": "read",
-    "members": [{"memberName": m, "identityProvider": "AzureAD"} for m in rls_members],
     "tablePermissions": [
         {
             "name": "Retailer",

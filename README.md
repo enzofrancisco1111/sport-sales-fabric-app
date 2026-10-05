@@ -86,7 +86,11 @@ flowchart LR
   | `direction@…` | les 6 enseignes |
   | compte absent de la table | aucune |
 
-  Logique vérifiée en DAX pour chaque compte. Pour l'activer réellement : ajouter les utilisateurs au rôle (modèle sémantique > *Sécurité*) avec un accès *Viewer* + *Build*, puis tester avec *Tester en tant que rôle*.
+  Logique vérifiée en DAX pour chaque compte, puis testée avec un vrai compte membre du rôle (`manager.amazon`) : l'app n'affiche qu'Amazon, avec les mêmes montants que la vue administrateur filtrée sur Amazon.
+
+  ![Vue RLS : compte Manager Amazon](docs/rls-amazon.png)
+
+  Pour l'activer : donner à l'utilisateur le rôle *Viewer* sur le workspace et *Build* sur le modèle, puis l'ajouter au rôle dans le service (modèle sémantique > *Sécurité* > *Retailer Manager*). Les membres d'un rôle ne font pas partie de la définition du modèle déployée par API, ils se gèrent dans le service. Un utilisateur non administrateur qui n'est membre d'aucun rôle n'a accès à aucune donnée.
 - **Aucun secret dans le dépôt** : les identifiants de workspace et de modèle sont fournis localement (`fabric.example.yaml`, variables d'environnement), les fichiers `.env` sont exclus de Git.
 
 ## Validation
